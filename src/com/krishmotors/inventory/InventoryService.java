@@ -14,7 +14,12 @@ public class InventoryService {
     this.inventory = inventory;
   }
 
+  
   // Methods
+  public InventoryItem getInventoryItem(String vin) throws VehicleNotFoundException {
+    return inventory.findItem(vin);
+  }
+
   public void reserveVehicle(String vin) throws VehicleNotFoundException,VehicleUnavailableException{
     InventoryItem item = inventory.findItem(vin);
     if (item.getVehicle().getStatus() == VehicleStatus.AVAILABLE) item.getVehicle().changeStatus(VehicleStatus.RESERVED);

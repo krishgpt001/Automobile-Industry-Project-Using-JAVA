@@ -53,5 +53,5 @@ public class VehicleModel {
   public List<VehicleVariant> getVariants(){ 
     return variants ;
   }
-
+  
 }
